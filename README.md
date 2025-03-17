@@ -54,5 +54,11 @@ Database Systems: Helps in designing memory-efficient data structures for databa
 ## 6. Research & Experimentation
 Developing New Memory Algorithms: Researchers can use a simulator to test new memory management techniques.
 AI and Machine Learning: Helps optimize memory allocation in ML models, reducing excessive memory usage.
-Conclusion
+## Conclusion
 A C++ Memory Management Simulator is a powerful tool for learning, debugging, optimizing, and researching memory-related problems. Whether you're a student, a software engineer, or an OS developer, it provides valuable insights into how memory works.
+## project
+![Screenshot 2025-03-18 004815](https://github.com/user-attachments/assets/33409848-9a18-4abe-b7cc-41b6bb339565)
+![Screenshot 2025-03-18 004834](https://github.com/user-attachments/assets/6cea31b1-ad8b-4610-a7ce-86e699e2a2ee)
+![Screenshot 2025-03-18 004842](https://github.com/user-attachments/assets/39e37a4c-2904-46e9-a513-388f4085e770)
+## output
+![Screenshot 2025-03-18 004900](https://github.com/user-attachments/assets/d3e6e1f2-2a4c-4fcb-a1ef-4c230f768186)
