@@ -1,0 +1,65 @@
+#include <iostream>
+#include <vector>
+
+#define MEMORY_SIZE 100  // Simulated memory size
+
+struct Block {
+    int start;
+    int size;
+    bool isAllocated;
+};
+
+std::vector<Block> memory;
+
+// Function to initialize memory
+void initializeMemory() {
+    memory.push_back({0, MEMORY_SIZE, false});
+}
+
+// Function to allocate memory using First Fit
+bool allocateMemory(int size) {
+    for (auto& block : memory) {
+        if (!block.isAllocated && block.size >= size) {
+            int remainingSize = block.size - size;
+            block.size = size;
+            block.isAllocated = true;
+            if (remainingSize > 0) {
+                memory.insert(memory.begin() + (&block - &memory[0]) + 1, {block.start + size, remainingSize, false});
+            }
+            std::cout << "Allocated " << size << " units at " << block.start << std::endl;
+            return true;
+        }
+    }
+    std::cout << "Memory allocation failed\n";
+    return false;
+}
+
+// Function to free memory
+void freeMemory(int start) {
+    for (auto& block : memory) {
+        if (block.start == start && block.isAllocated) {
+            block.isAllocated = false;
+            std::cout << "Freed memory at " << start << std::endl;
+            return;
+        }
+    }
+    std::cout << "Invalid free request\n";
+}
+
+// Function to display memory state
+void displayMemory() {
+    std::cout << "Memory Blocks:\n";
+    for (const auto& block : memory) {
+        std::cout << "Start: " << block.start << ", Size: " << block.size 
+                  << ", " << (block.isAllocated ? "Allocated" : "Free") << std::endl;
+    }
+}
+
+int main() {
+    initializeMemory();
+    allocateMemory(20);
+    allocateMemory(30);
+    freeMemory(0);
+    displayMemory();
+    return 0;
+}
